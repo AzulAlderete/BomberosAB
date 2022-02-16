@@ -15,6 +15,10 @@ class CreateHerramientasTable extends Migration
     {
         Schema::create('herramientas', function (Blueprint $table) {
             $table->id();
+            $table->integer('codigo');
+            $table->string('nombre');
+            $table->enum('estado', ['Activo', 'Inactivo'])->default('Activo');
+            $table->foreignId('tipo_herramienta_id')->constrained();
             $table->timestamps();
         });
     }

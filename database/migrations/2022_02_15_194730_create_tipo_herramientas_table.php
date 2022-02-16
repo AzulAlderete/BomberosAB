@@ -15,6 +15,7 @@ class CreateTipoHerramientasTable extends Migration
     {
         Schema::create('tipo_herramientas', function (Blueprint $table) {
             $table->id();
+            $table->string('descripcion');
             $table->timestamps();
         });
     }

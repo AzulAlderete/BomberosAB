@@ -2,84 +2,101 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\TipoHerramientaRequest;
 use App\TipoHerramienta;
 use Illuminate\Http\Request;
 
 class TipoHerramientaController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    // metodo para listar todos los tipos de herramientas
     public function index()
     {
-        //
+        $tipos = TipoHerramienta::all();
+        return response()->json([
+            "data" => $tipos
+        ]);
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
+    // metodo para crear un tipo de herramienta
+    public function store(TipoHerramientaRequest $request)
     {
-        //
+        TipoHerramienta::create($request->all());
+        return response()->json([
+            "message" => "Se ha creado el tipo de herramienta"
+        ], 201);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\TipoHerramienta  $tipoHerramienta
-     * @return \Illuminate\Http\Response
-     */
     public function show(TipoHerramienta $tipoHerramienta)
     {
-        //
+        return response()->json([
+            "data" => $tipoHerramienta
+        ]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\TipoHerramienta  $tipoHerramienta
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(TipoHerramienta $tipoHerramienta)
+    public function update(TipoHerramientaRequest $request, TipoHerramienta $tipoHerramienta)
     {
-        //
+        $tipoHerramienta->update($request->all());
+        return response()->json([
+            "message" => "Se ha actualizado el tipo de herramienta"
+        ]);
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\TipoHerramienta  $tipoHerramienta
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, TipoHerramienta $tipoHerramienta)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\TipoHerramienta  $tipoHerramienta
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(TipoHerramienta $tipoHerramienta)
     {
-        //
+        $tipoHerramienta->delete();
+        return response()->json([
+            "message" => "Se ha eliminado el tipo de herramienta"
+        ]);
+    }
+}
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Http\Requests\TipoHerramientaRequest;
+use App\TipoHerramienta;
+use Illuminate\Http\Request;
+
+class TipoHerramientaController extends Controller
+{
+    // metodo para listar todos los tipos de herramientas
+    public function index()
+    {
+        $tipos = TipoHerramienta::all();
+        return response()->json([
+            "data" => $tipos
+        ]);
+    }
+
+    // metodo para crear un tipo de herramienta
+    public function store(TipoHerramientaRequest $request)
+    {
+        TipoHerramienta::create($request->all());
+        return response()->json([
+            "message" => "Se ha creado el tipo de herramienta"
+        ], 201);
+    }
+
+    public function show(TipoHerramienta $tipoHerramienta)
+    {
+        return response()->json([
+            "data" => $tipoHerramienta
+        ]);
+    }
+
+    public function update(TipoHerramientaRequest $request, TipoHerramienta $tipoHerramienta)
+    {
+        $tipoHerramienta->update($request->all());
+        return response()->json([
+            "message" => "Se ha actualizado el tipo de herramienta"
+        ]);
+    }
+
+    public function destroy(TipoHerramienta $tipoHerramienta)
+    {
+        $tipoHerramienta->delete();
+        return response()->json([
+            "message" => "Se ha eliminado el tipo de herramienta"
+        ]);
     }
 }
