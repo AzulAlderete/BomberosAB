@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-RRoute::group([
+Route::group([
 
     'middleware' => 'api',
     'prefix' => 'auth'
