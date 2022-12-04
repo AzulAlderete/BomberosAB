@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class TipoSiniestroRequest extends FormRequest
+class InsumoRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,9 @@ class TipoSiniestroRequest extends FormRequest
     public function rules()
     {
         return [
-            'descripcion' => 'required'
+            'codigo'=>'required',
+            'descripcion'=>'required',
+            'stock'=>'required',
         ];
     }
 }

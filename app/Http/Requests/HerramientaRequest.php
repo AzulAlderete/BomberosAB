@@ -24,10 +24,10 @@ class HerramientaRequest extends FormRequest
     public function rules()
     {
         return [
-            'codigo'                => 'numeric|required',
-            'nombre'                => 'required|max:45',
-            'tipo_herramienta_id'   => 'required|numeric'
+            'codigo'=>'required',
+            'nombre'=>'required',
+            'estado_herramienta_id'=>'required',
+            'estado_herramienta_id'=>'required'
         ];
     }
 }
-

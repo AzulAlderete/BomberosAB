@@ -1,10 +1,10 @@
 <?php
 
 namespace App\Http\Requests;
-
+ 
 use Illuminate\Foundation\Http\FormRequest;
 
-class VehiculoRequest extends FormRequest
+class SiniestroRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,10 +24,10 @@ class VehiculoRequest extends FormRequest
     public function rules()
     {
         return [
-            'codigo' => 'required|numeric',
-            'patente' => 'required|string',
-            'denominacion' => 'required',
-            'tipo_vehiculo_id' => 'required|numeric',
+            'numero'=>'required',
+            'descripcion'=>'required',
+            'boca_agua_id'=>'required',
+            'solicitud_id'=>'required'
         ];
     }
 }

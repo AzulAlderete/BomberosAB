@@ -1,5 +1,5 @@
 <?php
-
+ 
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
@@ -24,10 +24,10 @@ class VehiculoRequest extends FormRequest
     public function rules()
     {
         return [
-            'codigo' => 'required|numeric',
-            'patente' => 'required|string',
-            'denominacion' => 'required',
-            'tipo_vehiculo_id' => 'required|numeric',
+            'patente'=>'required',
+            'codigo'=>'required',
+            'estado_id'=>'required',
+            'tipo_vehiculo_id'=>'required'
         ];
     }
 }
