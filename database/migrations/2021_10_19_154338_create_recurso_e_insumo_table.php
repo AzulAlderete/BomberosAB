@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTipoVehiculosTable extends Migration
+class CreateRecursoEInsumoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateTipoVehiculosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_vehiculos', function (Blueprint $table) {
+        Schema::create('recurso_e_insumo', function (Blueprint $table) {
             $table->id();
             $table->string('descripcion');
+            $table->string('codigo');
+            $table->integer('stock');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateTipoVehiculosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_vehiculos');
+        Schema::dropIfExists('recurso_e_insumo');
     }
 }

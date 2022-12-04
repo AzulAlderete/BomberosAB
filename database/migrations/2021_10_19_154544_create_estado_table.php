@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateHerramientasTable extends Migration
+class CreateEstadoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateHerramientasTable extends Migration
      */
     public function up()
     {
-        Schema::create('herramientas', function (Blueprint $table) {
+        Schema::create('estado', function (Blueprint $table) {
             $table->id();
-            $table->integer('codigo');
-            $table->string('nombre');
-            $table->enum('estado', ['Activo', 'Inactivo'])->default('Activo');
-            $table->foreignId('tipo_herramienta_id')->constrained();
+            $table->string('descripcion', 50);
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateHerramientasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('herramientas');
+        Schema::dropIfExists('estado');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateVoluntariosTable extends Migration
+class CreateSolicitanteTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateVoluntariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('voluntarios', function (Blueprint $table) {
+        Schema::create('solicitante', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('apellido');
-            $table->string('documento');
+            $table->integer('documento');
             $table->string('telefono');
             $table->string('direccion');
-            $table->foreignId('rango_id')->constrained();
-            $table->foreignId('area_id')->constrained();
+            $table->foreignId('servicio_id')->constrained('servicio')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -33,7 +31,6 @@ class CreateVoluntariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('voluntarios');
+        Schema::dropIfExists('solicitante');
     }
 }
-

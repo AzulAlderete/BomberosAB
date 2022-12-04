@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBocasDeAguasTable extends Migration
+class CreateRangoTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateBocasDeAguasTable extends Migration
      */
     public function up()
     {
-        Schema::create('bocas_de_aguas', function (Blueprint $table) {
+        Schema::create('rango', function (Blueprint $table) {
             $table->id();
-            $table->string('direccion');
-            $table->integer('numero');
-            $table->string('latitud')->nullable();
-            $table->string('longitud')->nullable();
+            $table->string('descripcion', 20);
+            $table->foreignId('tipo_rango_id')->constrained('tipo_rango')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateBocasDeAguasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bocas_de_aguas');
+        Schema::dropIfExists('rango');
     }
 }
