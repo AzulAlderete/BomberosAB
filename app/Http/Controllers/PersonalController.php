@@ -9,7 +9,7 @@ use App\Models\TipoRango;
 use Illuminate\Http\Request;
 
 class PersonalController extends Controller
-{ 
+{
     /**
      * Display a listing of the resource.
      *

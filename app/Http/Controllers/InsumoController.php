@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Insumo;
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
 
 class InsumoController extends Controller
 {

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Vehiculo;
 use App\Models\EstadoVehiculo;
 use App\Models\TipoVehiculo;
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;
 
 class VehiculoController extends Controller
 {
