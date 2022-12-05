@@ -55,3 +55,4 @@ Route::group(['middleware' => 'auth'], function () {
 });
 //Route::get('herramienta', [HerramientaController::class, 'show'])->name('herramienta.show');
 //Route::post('herramienta', [HerramientaController::class, 'store'])->name('herramienta.store');*/
+
