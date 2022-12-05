@@ -12,8 +12,7 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Enrutado(Controllers-Funcionalidades)
-
+//ENRUTADO DE CONTROLLERS Y FUNCIONALIDADES
 Route::get('/', function () {
     return view('welcome');
 });
@@ -54,5 +53,5 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('dashboard', [\App\Http\Controllers\CustomAuthController::class, 'dashboard']); 
 
 });
-
-
+//Route::get('herramienta', [HerramientaController::class, 'show'])->name('herramienta.show');
+//Route::post('herramienta', [HerramientaController::class, 'store'])->name('herramienta.store');*/
